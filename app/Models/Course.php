@@ -19,7 +19,7 @@ class Course extends Model
         'instructor_id'
 
     ];
-     public function instructor(): BelongsTo
+    public function instructor(): BelongsTo
     {
         return $this->belongsTo(User::class, 'instructor_id');
     }
@@ -33,6 +33,9 @@ class Course extends Model
     {
         return $this->hasMany(CourseSession::class);
     }
-
     
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }
