@@ -11,6 +11,7 @@ class Task extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'session_id',
         'title',
@@ -29,7 +30,9 @@ class Task extends Model
     /**
      * العلاقة مع تسليمات الطلاب (TaskSubmissions)
      */
-    public function taskSubmissions()
+    
+    public function submissions()
+
     {
         return $this->hasMany(TaskSubmission::class);
     }
