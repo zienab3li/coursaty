@@ -9,4 +9,9 @@ class Course extends Model
 {
     /** @use HasFactory<\Database\Factories\CourseFactory> */
     use HasFactory;
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }
